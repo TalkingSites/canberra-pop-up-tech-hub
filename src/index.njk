@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: Welcome to Space Club!
+description: Check out this home page
+permalink: "/"
+---
+
+<section class="mt-3 mb-5">
+  <div class="mb-5">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">
+      Located on Dione, one of the largest moon's of Saturn, our club hosts regular get togethers. 
+      <br> 
+      Join us as we share our passion for our space home, whether gathering for meetings, contributing to the wiki and docs, reaching out to other moons, the possibilites are endless!
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-secondary">Featured</h2>
+    {% include "partials/featured.njk" %}
+  </div>
+
+  <div>
+    <h2>What's on</h2>
+    {% set type = "preview" %}
+    {% include "partials/eventsList.njk" %}
+  </div>
+
+  <div>
+    <h2>Latest Posts</h2>
+    {% set type = "preview" %}
+    {% include "partials/postsList.njk" %}
+  </div>
+
+</section>

@@ -1,0 +1,23 @@
+<div class="footer-wrapper">
+  <div class="divider" aria-hidden="true"></div>
+
+  <footer class="border-top py-4 mt-auto bg-black" id="footer-main">
+    <br>
+    <br>
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-4 text-light fs-5 fw-semibold">
+      <div class="">
+        © {{ global.currentYear }}
+        <a href="/" class="text-decoration-none text-light">{{ site.title }}</a>
+      </div>
+      <div class="d-flex gap-3 flex-wrap">
+        {% for item in navbar %}
+          {% if item.footer %}
+            <a href="{{ item.href }}" class="text-decoration-none text-light nav-link">
+              {{ item.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </footer>
+</div>

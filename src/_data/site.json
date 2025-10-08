@@ -1,0 +1,7 @@
+{
+  "title": "Space Club!",
+  "description": "Space Club! is our way of putting content for this web template. Check out the pages, posts, events and search. Whats it built with? Great question, it is 11ty, Nunjucks, ",
+  "logo": "/assets/images/logo.svg",
+  "favicon": "/assets/images/favicon.svg",
+  "baseUrl": "/"
+}

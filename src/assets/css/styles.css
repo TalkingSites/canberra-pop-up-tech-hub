@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/assets/fonts/UbuntuSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+:root {
+  --bs-primary: #0480c7;
+  --bs-primary-rgb: 4, 128, 199;
+  --bs-primary-text-emphasis: #0e4a6d;
+  --bs-secondary-rgb: 130, 0, 216;
+  --bs-heading-color: var(--bs-primary);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-family: "Ubuntu", var(--bs-body-font-family);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary-text-emphasis) ;
+  --bs-btn-hover-border-color: var(--bs-primary-text-emphasis) ;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+  --bs-btn-disabled-color: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}
+.btn-secondary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #9b184d;
+  --bs-btn-hover-border-color: #9b184d;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: var(--bs-secondary);
+  --bs-btn-hover-border-color: var(--bs-secondary);
+  --bs-btn-active-bg: var(--bs-secondary);
+  --bs-btn-active-border-color: var(--bs-secondary);
+  --bs-btn-disabled-color: var(--bs-secondary);
+  --bs-btn-disabled-border-color: var(--bs-secondary);
+}
+
+
+#navbar-main .nav-link {
+  --bs-nav-link-padding-x: 1rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#navbar-main .nav-link:hover {
+  color: var(--bs-primary);
+}
+
+#footer-main .nav-link {
+  transition: border-width 0.1s ease-in-out;
+  border-radius: 8px;
+}
+
+#footer-main .nav-link:hover {
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  --bs-border-width: 3px;
+}
+
+.border-primary-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.border-primary-hover:hover {
+  border-color: rgba(var(--bs-primary-rgb), 1) !important;
+}
+
+.border-secondary-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.border-secondary-hover:hover {
+  border-color: rgba(var(--bs-secondary-rgb), 1) !important;
+}
+
+.text-preline {
+  white-space: pre-line;
+}
+
+
+
+.footer-wrapper {
+  position: relative;
+}
+
+.footer-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3BC7F6 0%, #83f755 29.8%, #33978f 69.3%, #1821a0 100%);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: lighten;
+}
+
+.divider {
+  --divider-url: url('/assets/space-divider.svg');
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+  z-index: 3;
+  isolation: isolate;
+}
+
+
+.divider::before {
+  content: "";
+  display: block;
+  padding-bottom: 7%;
+}
+
+
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  background-image: var(--divider-url);
+  background-position: center top;
+  background-size: auto 100%;
+  transform: translate(-50%, 50%);
+  pointer-events: none;
+}
+
+
+@media (max-width: 1200px) {
+  .divider::before {
+    padding-bottom: 12%;
+  }
+
+  .divider::after {
+    width: 300%;
+  }
+}
+
+@media (max-width: 992px) {
+  .divider::before {
+    padding-bottom: 15%;
+  }
+
+  .divider::after {
+    width: 300%;
+  }
+}
+
+@media (max-width: 768px) {
+  .divider::before {
+    padding-bottom: 20%;
+  }
+
+  .divider::after {
+    width: 300%;
+  }
+}
+
+@media (max-width: 576px) {
+  .divider::before {
+    padding-bottom: 28%;
+  }
+
+  .divider::after {
+    width: 300%;
+  }
+}

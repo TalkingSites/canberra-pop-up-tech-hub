@@ -1,0 +1,81 @@
+<section class="bg-body mt-5">
+
+  <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm mb-4 col-md-6">
+    <h2 class="mb-3 text-primary">{{ formTitle }}</h2>
+    <p class="text-muted small mb-3">{{ formDescription }}</p>
+
+    <form class="needs-validation" 
+          name="{{ formName }}" 
+          id="{{ formName }}" 
+          method="post" 
+          netlify 
+          novalidate>
+      
+      {# Loop through fields defined in front matter #}
+      {% for field in formFields %}
+        <div class="mb-3">
+          <label for="{{ field | capitalize }}" class="form-label">
+            {{ field | capitalize }}
+          </label>
+
+          {% if field == "message" %}
+            <textarea class="form-control" 
+                      id="{{ field | capitalize }}" 
+                      name="{{ field }}" 
+                      rows="4" 
+                      required></textarea>
+            <div class="invalid-feedback">Please enter your {{ field }}.</div>
+
+          {% else %}
+            <input type="{{ "email" if field == "email" else "text" }}" 
+                   class="form-control" 
+                   id="{{ field | capitalize }}" 
+                   name="{{ field }}" 
+                   required>
+            <div class="invalid-feedback">Please enter a valid {{ field }}.</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-outline-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+{# --- Bootstrap validation --- #}
+<script>
+(() => {
+  'use strict';
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+</script>
+
+{# --- Prefill fields from URL params --- #}
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+
+  const setFieldFromParams = (selector, keys) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    for (const k of keys) {
+      const v = params.get(k);
+      if (v !== null && v !== undefined && v !== "") { el.value = v; return; }
+    }
+  };
+
+  {% for field in formFields %}
+    setFieldFromParams('#contact{{ field | capitalize }}', ['{{ field }}']);
+  {% endfor %}
+})();
+</script>
