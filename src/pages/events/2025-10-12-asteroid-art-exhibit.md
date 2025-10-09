@@ -7,6 +7,8 @@ eventDate: 2025-10-12
 startTime: 1200
 endTime: 2000
 location: "The Orbital Gallery \n 7 Comet Crescent, Meridian 9, Dione"
+
+featured: true
 ---
 
 ## {{description}}

@@ -8,8 +8,6 @@ startTime: 1900
 endTime: 2300
 location: "Starbase Arcade Lounge \n 45 Nebula Road, Meridian 2, Dione"
 image: "/assets/images/galactic-game-night.png"
-
-featured: true
 ---
 
 ## {{description}}

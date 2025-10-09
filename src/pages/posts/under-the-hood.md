@@ -4,6 +4,7 @@ description: Want to know how this website works, how to edit, customise, or use
 permalink: /posts/under-the-hood/
 postDate: 2025-09-30
 author: starship-droid
+
 ---
 
 Welcome to the technical guide for this website. This post explains what is used to make this website, how you can get started using this template, how to customise the look, and how to edit the content and add your own content!

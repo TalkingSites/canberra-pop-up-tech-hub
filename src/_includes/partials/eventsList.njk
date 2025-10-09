@@ -3,7 +3,11 @@
 {% elif type == "past" %}
     {% set events = collections.pastEvents %}
 {% elif type == "preview" %}
-    {% set events = collections.previewEvents %}
+    {% if excludeFeatured %}
+        {% set events = collections.previewEvents %}
+    {% else %}
+        {% set events = collections.previewEventsAll %}
+    {% endif %}
 {% else %}
     {% set events = collections.events %}
 {% endif %}

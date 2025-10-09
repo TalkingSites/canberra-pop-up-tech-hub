@@ -1,5 +1,9 @@
 {% if type == "preview" %}
-    {% set posts = collections.previewPosts %}
+    {% if excludeFeatured %}
+        {% set posts = collections.previewPosts %}
+    {% else %}
+        {% set posts = collections.previewPostsAll %}
+    {% endif %}
 {% else %}
     {% set posts = collections.posts %}
 {% endif %}

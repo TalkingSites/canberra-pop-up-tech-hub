@@ -16,20 +16,22 @@ permalink: "/"
   </div>
 
   <div class="mb-5">
-    <h2 class="text-secondary">Featured</h2>
-    {% include "partials/featured.njk" %}
-  </div>
+  <h2 class="text-secondary">Featured</h2>
+  {% include "partials/featured.njk" %}
+</div>
 
-  <div>
-    <h2>What's on</h2>
-    {% set type = "preview" %}
-    {% include "partials/eventsList.njk" %}
-  </div>
+<div>
+  <h2>What's on</h2>
+  {% set type = "preview" %}
+  {% set excludeFeatured = true %}
+  {% include "partials/eventsList.njk" %}
+</div>
 
-  <div>
-    <h2>Latest Posts</h2>
-    {% set type = "preview" %}
-    {% include "partials/postsList.njk" %}
-  </div>
+<div>
+  <h2>Latest Posts</h2>
+  {% set type = "preview" %}
+  {% set excludeFeatured = true %}
+  {% include "partials/postsList.njk" %}
+</div>
 
 </section>

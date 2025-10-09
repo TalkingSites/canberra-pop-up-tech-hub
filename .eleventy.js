@@ -67,6 +67,24 @@ module.exports = function (eleventyConfig) {
       .slice(0, 3);
   });
 
+  // Preview events (including featured)
+  eleventyConfig.addCollection("previewEventsAll", function (collectionApi) {
+    const now = dayjs();
+    return collectionApi.getFilteredByGlob("src/pages/events/*.md")
+      .filter(e =>
+        e.data.eventDate &&
+        dayjs(e.data.eventDate).isAfter(now)
+      )
+      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .slice(0, 3);
+  });
+
+  // Preview posts (including featured)
+  eleventyConfig.addCollection("previewPostsAll", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/pages/posts/*.md")
+      .sort((a, b) => new Date(b.data.postDate) - new Date(a.data.postDate))
+      .slice(0, 3);
+  });
 
   // Date formatting filter
   eleventyConfig.addFilter("formatDate", function (dateInput, format = 'dddd, Do MMMM YYYY') {
