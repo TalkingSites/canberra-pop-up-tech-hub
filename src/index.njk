@@ -21,15 +21,13 @@ permalink: "/"
 
 <div>
   <h2>What's on</h2>
-  {% set type = "preview" %}
-  {% set excludeFeatured = true %}
   {% include "partials/eventsList.njk" %}
 </div>
 
 <div>
   <h2>Latest Posts</h2>
   {% set type = "preview" %}
-  {% set excludeFeatured = true %}
+  {% set excludeFeatured = false %}
   {% include "partials/postsList.njk" %}
 </div>
 
