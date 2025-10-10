@@ -5,6 +5,11 @@
     "footer": true
   },
   {
+    "title": "Events",
+    "href": "/events/",
+    "footer": true
+  },
+  {
     "title": "About",
     "href": "/about",
     "footer": true
@@ -12,21 +17,6 @@
   {
     "title": "Contact",
     "href": "/contact",
-    "footer": true
-  },
-  {
-    "title": "Events",
-    "href": "/events/",
-    "footer": true
-  },
-  {
-    "title": "Posts",
-    "href": "/posts/",
-    "footer": true
-  },
-  {
-    "title": "Under the Hood",
-    "href": "/posts/under-the-hood",
     "footer": true
   }
 ]
