@@ -28,7 +28,11 @@
         </span>
       </div>
       <main class="py-3 py-md-5">
-        <div class="container">{{ content | safe }}</div>
+        <div class="container">
+          {{ content | safe }}
+
+        {% include "partials/joinMailing.njk" %}
+        </div>
       </main>
     </div>
     {% include "partials/footer.njk" %}

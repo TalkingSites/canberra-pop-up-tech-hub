@@ -7,9 +7,9 @@ permalink: "/"
 
 <section class="mt-3 mb-5">
   <div class="mb-5">
-    <h1 class="display-4">Welcome to the Canberra PopUp Tech Hub!</h1>
+    <h1 class="display-4">Welcome to the Canberra Tech Hub!</h1>
     <p class="lead">
-      Located in the heart of Canberra, our tech hub is open for anyone to come co-work or to host their event.
+      Located in the heart of Canberra, our tech hub is open for anyone to come co-work or to host their event. We will be here for 11 weeks, until the end of December.
       <br> 
     </p>
   </div>
@@ -19,15 +19,22 @@ permalink: "/"
   {% include "partials/featured.njk" %}
 </div>
 
+<br>
+
 <div>
   <h2>What's on</h2>
+  {% set type = "preview" %}
+  {% set excludeFeatured = true %}
   {% include "partials/eventsList.njk" %}
+
 </div>
+
+<br>
+<br>
+<br>
 
 <div>
   <h2>Latest Posts</h2>
-  {% set type = "preview" %}
-  {% set excludeFeatured = false %}
   {% include "partials/postsList.njk" %}
 </div>
 

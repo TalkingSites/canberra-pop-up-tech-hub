@@ -1,6 +1,11 @@
 const dayjs = require('dayjs');
 const advancedFormat = require('dayjs/plugin/advancedFormat');
+const isSameOrAfter = require('dayjs/plugin/isSameOrAfter');
+const isSameOrBefore = require('dayjs/plugin/isSameOrBefore');
+
 dayjs.extend(advancedFormat);
+dayjs.extend(isSameOrAfter);
+dayjs.extend(isSameOrBefore);
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
@@ -17,21 +22,22 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => new Date(b.data.postDate) - new Date(a.data.postDate));
   });
 
-  // Upcoming events
+  // Upcoming events (includes today)
   eleventyConfig.addCollection("upcomingEvents", function (collectionApi) {
-    const now = dayjs();
+    const today = dayjs().startOf('day');
     return collectionApi.getFilteredByGlob("src/pages/events/*.md")
-      .filter(e => e.data.eventDate && dayjs(e.data.eventDate).isAfter(now))
+      .filter(e => e.data.eventDate && dayjs(e.data.eventDate).startOf('day').isSameOrAfter(today))
       .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate));
   });
 
-  // Past events
+  // Past events (before today)
   eleventyConfig.addCollection("pastEvents", function (collectionApi) {
-    const now = dayjs();
+    const today = dayjs().startOf('day');
     return collectionApi.getFilteredByGlob("src/pages/events/*.md")
-      .filter(e => e.data.eventDate && dayjs(e.data.eventDate).isBefore(now))
+      .filter(e => e.data.eventDate && dayjs(e.data.eventDate).startOf('day').isBefore(today))
       .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate)); // newest first
   });
+  
   // Featured events
   eleventyConfig.addCollection("featuredEvents", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/pages/events/*.md")
@@ -48,11 +54,11 @@ module.exports = function (eleventyConfig) {
 
   // Preview events (excluding featured by default)
   eleventyConfig.addCollection("previewEvents", function (collectionApi) {
-    const now = dayjs();
+    const today = dayjs().startOf('day');
     return collectionApi.getFilteredByGlob("src/pages/events/*.md")
       .filter(e =>
         e.data.eventDate &&
-        dayjs(e.data.eventDate).isAfter(now) &&
+        dayjs(e.data.eventDate).startOf('day').isSameOrAfter(today) &&
         e.data.featured !== true // hide featured
       )
       .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
@@ -69,11 +75,11 @@ module.exports = function (eleventyConfig) {
 
   // Preview events (including featured)
   eleventyConfig.addCollection("previewEventsAll", function (collectionApi) {
-    const now = dayjs();
+    const today = dayjs().startOf('day');
     return collectionApi.getFilteredByGlob("src/pages/events/*.md")
       .filter(e =>
         e.data.eventDate &&
-        dayjs(e.data.eventDate).isAfter(now)
+        dayjs(e.data.eventDate).startOf('day').isSameOrAfter(today)
       )
       .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
       .slice(0, 3);
