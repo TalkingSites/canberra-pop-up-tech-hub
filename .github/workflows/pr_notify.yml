@@ -29,7 +29,6 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           ACTION: ${{ github.event.action }}
           ACTOR: ${{ github.actor }}
-          REPO: ${{ github.repository }}
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
@@ -48,56 +47,55 @@ jobs:
 
           if [ "$EVENT_NAME" = "pull_request" ]; then
             if [ "$ACTION" = "opened" ]; then
-              TEXT="🆕 [PR] $PR_AUTHOR opened *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="🆕 **Pull Request opened:** *$PR_TITLE*%0Aby $PR_AUTHOR%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "closed" ] && [ "${{ github.event.pull_request.merged }}" = "true" ]; then
-              TEXT="✅ [PR] *Merged* by $ACTOR: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="✅ **Pull Request merged:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "closed" ]; then
-              TEXT="❌ [PR] *Closed* by $ACTOR: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="❌ **Pull Request closed:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "reopened" ]; then
-              TEXT="♻️ [PR] *Reopened* $PR_TITLE in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="♻️ **Pull Request reopened:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "review_requested" ]; then
-              TEXT="👀 [PR] Review requested for *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="👀 **Review requested:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             elif [ "$ACTION" = "review_request_removed" ]; then
-              TEXT="🚫 [PR] Review request removed for *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="🚫 **Review request removed:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             fi
 
           elif [ "$EVENT_NAME" = "pull_request_review" ]; then
             if [ "$REVIEW_STATE" = "approved" ]; then
-              TEXT="👍 [PR Review] $ACTOR *approved* PR: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="👍 **Review approved:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             elif [ "$REVIEW_STATE" = "changes_requested" ]; then
-              TEXT="🔄 [PR Review] $ACTOR *requested changes* on: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="🔄 **Changes requested:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             elif [ "$REVIEW_STATE" = "commented" ]; then
-              TEXT="💬 [PR Review] $ACTOR *commented* on: *$PR_TITLE* in $REPO%0A[View on GitHub]($PR_URL)"
+              TEXT="💬 **Review comment:** *$PR_TITLE*%0Aby $ACTOR%0A[View on GitHub]($PR_URL)"
             fi
 
           elif [ "$EVENT_NAME" = "issues" ]; then
             if [ "$ACTION" = "opened" ]; then
-              TEXT="📝 [Issue] $ISSUE_AUTHOR opened *$ISSUE_TITLE* in $REPO%0A[View on GitHub]($ISSUE_URL)"
+              TEXT="📝 **Issue opened:** *$ISSUE_TITLE*%0Aby $ISSUE_AUTHOR%0A[View on GitHub]($ISSUE_URL)"
             elif [ "$ACTION" = "closed" ]; then
-              TEXT="✅ [Issue] *Closed* by $ACTOR: *$ISSUE_TITLE* in $REPO%0A[View on GitHub]($ISSUE_URL)"
+              TEXT="✅ **Issue closed:** *$ISSUE_TITLE*%0Aby $ACTOR%0A[View on GitHub]($ISSUE_URL)"
             elif [ "$ACTION" = "reopened" ]; then
-              TEXT="♻️ [Issue] *Reopened* $ISSUE_TITLE in $REPO%0A[View on GitHub]($ISSUE_URL)"
+              TEXT="♻️ **Issue reopened:** *$ISSUE_TITLE*%0Aby $ACTOR%0A[View on GitHub]($ISSUE_URL)"
             fi
 
           elif [ "$EVENT_NAME" = "issue_comment" ]; then
             SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 150)
-            TEXT="💬 [Issue] $COMMENT_AUTHOR commented in $REPO:%0A${SHORT_BODY}%0A[View on GitHub]($COMMENT_URL)"
+            TEXT="💬 **New comment on issue:** *$ISSUE_TITLE*%0Aby $COMMENT_AUTHOR%0A${SHORT_BODY}%0A[View on GitHub]($COMMENT_URL)"
 
           elif [ "$EVENT_NAME" = "push" ]; then
             BRANCH=$(echo "$PUSH_REF" | sed 's|refs/heads/||')
             COMMIT_MSG="${{ github.event.head_commit.message }}"
             COMMIT_URL="${{ github.event.head_commit.url }}"
-            TEXT="📦 [Push] $ACTOR pushed to *$BRANCH* in $REPO%0A\"$COMMIT_MSG\"%0A[View on GitHub]($COMMIT_URL)"
-
+            TEXT="**New commit:** \"$COMMIT_MSG\"%0A$ACTOR pushed to *$BRANCH*%0A[View on GitHub]($COMMIT_URL)"
 
           elif [ "$EVENT_NAME" = "release" ]; then
-            TEXT="🏷️ [Release] *$RELEASE_NAME* published in $REPO%0A[View on GitHub]($RELEASE_URL)"
+            TEXT="🏷️ **New release:** *$RELEASE_NAME*%0Aby $ACTOR%0A[View on GitHub]($RELEASE_URL)"
 
           elif [ "$EVENT_NAME" = "watch" ]; then
-            TEXT="⭐ $REPO starred by $ACTOR"
+            TEXT="⭐ **Repository starred**%0Aby $ACTOR"
 
           elif [ "$EVENT_NAME" = "fork" ]; then
-            TEXT="🍴 $REPO forked by $ACTOR"
+            TEXT="🍴 **Repository forked**%0Aby $ACTOR"
 
           else
             echo "⚠️ Unsupported event: $EVENT_NAME"

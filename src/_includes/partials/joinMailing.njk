@@ -1,70 +1,25 @@
+<style>
+  .mauticform-page-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @media(min-width: 768px) {
+    .mauticform-page-1 {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+  }
+</style>
 <section class="bg-body mt-5">
-
-  <div class="text-center  bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm mb-4 col-12">
+  <div class="text-center bg-body-tertiary px-5 pt-4 pb-1 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm mb-4
+      col-12">
     <h2 class="mb-3 text-primary">Join Our Mailing List</h2>
-    <p class="text-muted small mb-3"></p>
-
-    <form class="needs-validation" 
-          name="mailinglist" 
-          id="mailinglist" 
-          method="post" 
-          netlify 
-          novalidate>
-      
-      
-        <div class="mb-3">
-          <label for="" class="form-label">
-            Email
-          </label>
-
-            <input type="email" 
-                   class="form-control" 
-                   id="email" 
-                   name="email" 
-                   required>
-            <div class="invalid-feedback">Please enter a valid email.</div>
-          
-        </div>
-
-      <button type="submit" class="btn btn-outline-primary">Submit</button>
-    </form>
+    <p class="text-muted mb-3">
+      Subscribe for updates on events, workshops, new facilities, and our next pop-up tech hubs locations!
+    </p>
+      <script type="text/javascript" src="//engage.electronworkshop.com.au/form/generate.js?id=2"></script>
   </div>
 </section>
-
-
-{# --- Bootstrap validation --- #}
-<script>
-(() => {
-  'use strict';
-  const forms = document.querySelectorAll('.needs-validation');
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
-</script>
-
-{# --- Prefill fields from URL params --- #}
-<script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-
-  const setFieldFromParams = (selector, keys) => {
-    const el = document.querySelector(selector);
-    if (!el) return;
-    for (const k of keys) {
-      const v = params.get(k);
-      if (v !== null && v !== undefined && v !== "") { el.value = v; return; }
-    }
-  };
-
-  {% for field in formFields %}
-    setFieldFromParams('#contact{{ field | capitalize }}', ['{{ field }}']);
-  {% endfor %}
-})();
-</script>

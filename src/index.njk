@@ -9,33 +9,29 @@ permalink: "/"
   <div class="mb-5">
     <h1 class="display-4">Welcome to the Canberra Tech Hub!</h1>
     <p class="lead">
-      Located in the heart of Canberra, our tech hub is open for anyone to come co-work or to host their event. We will be here for 11 weeks, until the end of December.
-      <br> 
-    </p>
+      Located in the heart of Canberra, our tech hub is open for anyone to come co-work or to host their event. We will be
+      here for 11 weeks, until the end of December.
+      <br></p>
+    </div>
+    {% set featuredItems = collections.featuredEvents | concat(collections.featuredPosts) %}
+    {% if featuredItems and featuredItems | length > 0 %}
+      <div class="mb-5">
+        <h2 class="text-secondary">Featured</h2>
+        {% include "partials/featured.njk" %}
+      </div>
+    {% endif %}
+    <br>
+    <div>
+      <h2>What's on</h2>
+      {% set type = "preview" %}
+      {% set excludeFeatured = true %}
+      {% include "partials/eventsList.njk" %}
+    </div>
+    <br>
+    <br>
+    <br>
+  <div>
+    <h2>Latest Posts</h2>
+    {% include "partials/postsList.njk" %}
   </div>
-
-  <div class="mb-5">
-  <h2 class="text-secondary">Featured</h2>
-  {% include "partials/featured.njk" %}
-</div>
-
-<br>
-
-<div>
-  <h2>What's on</h2>
-  {% set type = "preview" %}
-  {% set excludeFeatured = true %}
-  {% include "partials/eventsList.njk" %}
-
-</div>
-
-<br>
-<br>
-<br>
-
-<div>
-  <h2>Latest Posts</h2>
-  {% include "partials/postsList.njk" %}
-</div>
-
 </section>

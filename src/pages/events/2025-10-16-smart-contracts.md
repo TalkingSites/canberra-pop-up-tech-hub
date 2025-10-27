@@ -5,10 +5,10 @@ description: Join us for a special evening with Scott Chamberlain, Founder of Ev
 eventDate: 2025-10-16
 startTime: 5:30pm
 endTime: 8:30pm
-location: "Canberra Emerging Tech Hub /n Civic Square, North Building, 180 London Circuit, Canberra"
+location: "Canberra Emerging Tech Hub \n Civic Square, North Building, 180 London Circuit, Canberra"
 image: "/assets/images/events/highres_530616976.avif"
 
-featured: true
+featured: false
 ---
 
 Join us for a special evening with Scott Chamberlain, Founder of Evernode and Senior Researcher at the Australian National University, as he explores how research innovation and decentralised infrastructure are reshaping the blockchain landscape.
