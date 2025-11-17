@@ -8,6 +8,11 @@ dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
 
 module.exports = function (eleventyConfig) {
+  //admin is left unprocessed and copied to site
+  eleventyConfig.ignores.add("src/admin/index.html");
+  eleventyConfig.ignores.add("src/admin/**/*.html");
+  eleventyConfig.addPassthroughCopy("src/admin");
+
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 
@@ -37,7 +42,7 @@ module.exports = function (eleventyConfig) {
       .filter(e => e.data.eventDate && dayjs(e.data.eventDate).startOf('day').isBefore(today))
       .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate)); // newest first
   });
-  
+
   // Featured events
   eleventyConfig.addCollection("featuredEvents", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/pages/events/*.md")

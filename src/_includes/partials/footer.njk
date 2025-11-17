@@ -1,25 +1,29 @@
-
-
 <div class="">
   <div class="divider " aria-hidden="true"></div>
-
   <footer class="border-top pb-4 mt-auto bg-footer-gradient" id="footer-main" style="padding-top: 10rem;">
     <br>
-    <br>
-    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-4 text-light fs-5 fw-semibold">
-      <div class="">
-        © {{ global.currentYear }}
-        <a href="/" class="text-decoration-none text-light">{{ site.title }}</a>
-      </div>
-      <div class="d-flex gap-3 flex-wrap">
-        {% for item in navbar %}
-          {% if item.footer %}
-            <a href="{{ item.href }}" class="text-decoration-none text-light nav-link">
-              {{ item.title }}
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
+      <br>
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-4 text-light fs-5 fw-semibold">
+          <div class="">
+            <div class="">
+              © {{ global.currentYear }}
+              <a href="/" class="text-decoration-none text-light">{{ site.title }}</a>
+            </div>
+            <div>
+              <a class="small fs-6 text-light text-decoration-none" href="https://github.com/starship-droid/decap-cms-editor-website">
+                <i class="bi bi-github me-2"></i>View on Github
+              </a>
+            </div>
+          </div>
+          <div class="d-flex gap-3 flex-wrap">
+            {% for item in navbar %}
+              {% if item.footer %}
+                <a href="{{ item.href }}" class="text-decoration-none text-light nav-link">
+                  {{ item.title }}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </footer>
     </div>
-  </footer>
-</div>

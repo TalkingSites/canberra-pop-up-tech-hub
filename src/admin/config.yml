@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: TalkingSites/canberra-pop-up-tech-hub
+  branch: main
+  commit_messages: "{{author}} edited {{path}}"
+  
+publish_mode: editorial_workflow
+
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+
+  - name: "events"
+    label: "Events"
+    folder: "src/pages/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Permalink (must end with /)", name: "permalink", widget: "string" }
+      - { label: "Event Date", name: "eventDate", widget: "datetime" }
+      - { label: "Start Time", name: "startTime", widget: "string", required: false }
+      - { label: "End Time", name: "endTime", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "text", required: false }
+      - { label: "Hide Event Details", name: "hideEventDetails", widget: "boolean", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "posts"
+    label: "Posts"
+    folder: "src/pages/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Permalink (must end with /)", name: "permalink", widget: "string" }
+      - { label: "Post Date", name: "postDate", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    filter: { exclude: ["posts", "events"] }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Permalink (must end with /)", name: "permalink", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
