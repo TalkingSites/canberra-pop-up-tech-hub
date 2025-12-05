@@ -1,6 +1,7 @@
 ---
 title: National AI plan discussion
 description: Casual and friendly discussion on the new National AI plan over coffee
+permalink: /events/2025/12/national-ai-strategy/
 eventDate: 2025-12-06T11:00:00.000+11:00
 startTime: 11:00
 endTime: 13:00
@@ -8,4 +9,17 @@ location: Canberra Emerging Tech Hub at CMAG
 featured: true
 image: /assets/uploads/file_00000000807c7207995f3c8423c68de2.png
 ---
-Join us for a casual chat over coffee about Australia's brand-new National AI Plan, just announced this week! We'll dive into the big ideas—like boosting AI jobs, data centers on renewables, and the new AI Safety Institute—while keeping it relaxed and open for your thoughts on how it impacts tech, work, and ethics in Oz
+The government just dropped its National AI Plan this week (December 2nd). Want to chat about what it actually means?
+
+We're talking about $30 million for a new AI Safety Institute, pushing data centers to run on renewables, and the big question: will this create good jobs or just cut them?
+
+No PowerPoints, no jargon, just a conversation about how AI might change work, what protections workers actually get, and whether Australia's playing catch-up or getting ahead.
+
+Bring your questions, skepticism, or just curiosity.
+
+
+
+Reads before attending:
+
+* Official plan: https://www.industry.gov.au/publications/national-ai-plan
+* Critical analysis from The Conversation: https://theconversation.com/australias-national-ai-plan-has-just-been-released-who-exactly-will-benefit-270981
