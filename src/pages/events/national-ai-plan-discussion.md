@@ -17,8 +17,11 @@ No PowerPoints, no jargon, just a conversation about how AI might change work, w
 
 Bring your questions, skepticism, or just curiosity.
 
-
-
 Reads before attending:
-- [Official plan](https://www.industry.gov.au/publications/national-ai-plan)
-- [Critical analysis from The Conversation](https://theconversation.com/australias-national-ai-plan-has-just-been-released-who-exactly-will-benefit-270981)
+
+* [Official plan](https://www.industry.gov.au/publications/national-ai-plan)
+* [Critical analysis from The Conversation](https://theconversation.com/australias-national-ai-plan-has-just-been-released-who-exactly-will-benefit-270981)
+
+Map
+
+<https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8>[](https://theconversation.com/australias-national-ai-plan-has-just-been-released-who-exactly-will-benefit-270981)
