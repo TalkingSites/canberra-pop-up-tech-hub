@@ -1,6 +1,7 @@
 ---
 title: National AI plan discussion
 description: Casual and friendly discussion on the new National AI plan over coffee
+permalink: /events/2025/12/national-ai-strategy/
 eventDate: 2025-12-06T11:00:00.000+11:00
 startTime: 11:00
 endTime: 13:00
