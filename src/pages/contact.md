@@ -1,5 +1,5 @@
 ---
-title: Contact Space Club!
+title: Contact Canberra Tech Hub!
 description: Want to reach out? You can do so from this page
 permalink: "/contact/"
 
