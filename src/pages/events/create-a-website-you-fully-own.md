@@ -9,7 +9,7 @@ description: In this workshop, you will learn how to create your own website
   clear understanding of your site’s structure and the ability to manage it
   independently.
 permalink: /events/2025/12/create-your-website/
-eventDate: 2025-12-20T00:00:00.000+11:00
+eventDate: 2025-12-20T11:00:00+11:00
 startTime: 11:00AM
 endTime: 1:00PM
 location: Canberra Tech Hub next to CMAG
