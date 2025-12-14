@@ -20,7 +20,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Permalink (must end with /)", name: "permalink", widget: "string" }
+      - { label: "Permalink (must end with /)", name: "permalink", widget: "string", required: false }
       - { label: "Event Date", name: "eventDate", widget: "datetime" }
       - { label: "Start Time", name: "startTime", widget: "string", required: false }
       - { label: "End Time", name: "endTime", widget: "string", required: false }
@@ -38,7 +38,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Permalink (must end with /)", name: "permalink", widget: "string" }
+      - { label: "Permalink (must end with /)", name: "permalink", widget: "string", required: false }
       - { label: "Post Date", name: "postDate", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Featured", name: "featured", widget: "boolean", required: false }
