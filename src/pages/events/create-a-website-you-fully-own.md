@@ -15,4 +15,8 @@ endTime: 1:00PM
 location: Canberra Tech Hub next to CMAG
 image: /assets/uploads/create-website-workshop.png
 ---
-{description}
+
+{{description}}
+
+Map:   
+<https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8>
