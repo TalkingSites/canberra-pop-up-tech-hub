@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>Content Manager</title>
-  </head>
-  <body>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager</title>
+  <style>
+    /* Custom banner styles */
+    .custom-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      margin: 0;
+      border-bottom: 3px solid #5a67d8;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-banner h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    .custom-banner p {
+      margin: 5px 0;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .custom-banner strong {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .custom-banner ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .custom-banner li {
+      margin: 5px 0;
+    }
+
+    .custom-banner code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Custom instructions banner -->
+  <div class="custom-banner">
+    <div style="    min-width: 800px;
+    max-width: 1440px;
+    padding: 0px 12px;
+    margin: 0px auto;">
+
+      <h2>📸 How to Add Gallery Images</h2>
+      <p>To add images to the gallery on the homepage, follow these steps:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Click on <strong>Media</strong> in the sidebar</li>
+        <li><strong>Step 2:</strong> Click <strong>Upload</strong> to select your image(s)</li>
+        <li><strong>Step 3:</strong> <strong>Important!</strong> Name your file starting with <code>gallery</code></li>
+        <li><strong>Example:</strong> <code>gallery-team-photo.jpg</code> or <code>gallery-event-2024.png</code></li>
+      </ul>
+      <p>✅ Only images starting with "gallery" will appear in the gallery section!</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Wait for CMS to load
+    CMS.registerPreviewStyle(`
+        .custom-banner {
+          display: none !important;
+        }
+      `);
+  </script>
+</body>
+
 </html>

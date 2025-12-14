@@ -3,10 +3,25 @@
 {% elif type == "past" %}
     {% set events = collections.pastEvents %}
 {% elif type == "preview" %}
+    {# Preview combined past and upcoming #}
     {% if excludeFeatured %}
-        {% set events = collections.previewEvents %}
+        {% set events = collections.previewEventsCombined %}
     {% else %}
-        {% set events = collections.previewEventsAll %}
+        {% set events = collections.previewEventsCombinedAll %}
+    {% endif %}
+{% elif type == "previewPast" %}
+    {# Preview past only #}
+    {% if excludeFeatured %}
+        {% set events = collections.previewPastEvents %}
+    {% else %}
+        {% set events = collections.previewPastEventsAll %}
+    {% endif %}
+{% elif type == "previewUpcoming" %}
+    {# Preview upcoming only #}
+    {% if excludeFeatured %}
+        {% set events = collections.previewUpcomingEvents %}
+    {% else %}
+        {% set events = collections.previewUpcomingEventsAll %}
     {% endif %}
 {% else %}
     {% set events = collections.events %}
@@ -68,7 +83,7 @@
             </div>
         {% endfor %}
     </div>
-    {% if type == "preview" %}
+    {% if type == "preview" or type == "previewPast" or type == "previewUpcoming" %}
         <div class="text-center mt-4">
             <p class="text-muted mb-3">Showing {{ events | length }} of {{ collections.events | length }} events</p>
             <a href="/events/" class="btn btn-outline-primary">
