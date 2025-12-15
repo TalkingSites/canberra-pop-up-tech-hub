@@ -5,89 +5,162 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
-  <title>Content Manager</title>
+  <title>Content Manager Temporarily Disabled</title>
   <style>
-    /* Custom banner styles */
-    .custom-banner {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 20px;
+    @font-face {
+      font-family: "Ubuntu";
+      src: url("/assets/fonts/UbuntuSans-VariableFont_wdth,wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    body {
+      font-family: "Ubuntu", sans-serif;
+      background-color: #f4f6fc;
       margin: 0;
-      border-bottom: 3px solid #5a67d8;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
     }
 
-    .custom-banner h2 {
-      margin: 0 0 10px 0;
-      font-size: 1.5em;
+    .custom-banner {
+      background: #fff;
+      color: #333;
+      border-radius: 12px;
+      padding: 30px 40px;
+      max-width: 800px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      line-height: 1.6;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #4f46e5;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      color: #2563eb;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #2563eb;
       font-weight: 600;
+      text-decoration: none;
     }
 
-    .custom-banner p {
-      margin: 5px 0;
-      font-size: 0.95em;
-      line-height: 1.5;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .custom-banner strong {
-      background: rgba(255, 255, 255, 0.2);
+    .step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .step-number {
+      background-color: #4f46e5;
+      color: white;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .step-content code {
+      background: #eef2ff;
       padding: 2px 6px;
-      border-radius: 3px;
-      font-weight: 600;
-    }
-
-    .custom-banner ul {
-      margin: 10px 0 0 20px;
-      padding: 0;
-    }
-
-    .custom-banner li {
-      margin: 5px 0;
-    }
-
-    .custom-banner code {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 2px 6px;
-      border-radius: 3px;
+      border-radius: 4px;
       font-family: 'Courier New', monospace;
-      font-size: 0.9em;
+      font-size: 0.95em;
+    }
+
+    .note {
+      background-color: #e0f2fe;
+      padding: 15px 20px;
+      border-left: 5px solid #0284c7;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+
+    .old-instructions {
+      display: none;
     }
   </style>
 </head>
 
 <body>
-  <!-- Custom instructions banner -->
   <div class="custom-banner">
-    <div style="    min-width: 800px;
-    max-width: 1440px;
-    padding: 0px 12px;
-    margin: 0px auto;">
+    <h2>🚧 Content Manager Temporarily Disabled</h2>
 
-      <h2>📸 How to Add Gallery Images</h2>
-      <p>To add images to the gallery on the homepage, follow these steps:</p>
-      <ul>
-        <li><strong>Step 1:</strong> Click on <strong>Media</strong> in the sidebar</li>
-        <li><strong>Step 2:</strong> Click <strong>Upload</strong> to select your image(s)</li>
-        <li><strong>Step 3:</strong> <strong>Important!</strong> Name your file starting with <code>gallery</code></li>
-        <li><strong>Example:</strong> <code>gallery-team-photo.jpg</code> or <code>gallery-event-2024.png</code></li>
-      </ul>
-      <p>✅ Only images starting with "gallery" will appear in the gallery section!</p>
+    <p>The Content Manager is currently offline. To edit content, please use the GitHub repository:</p>
+    <p><a href="https://github.com/TalkingSites/canberra-pop-up-tech-hub" target="_blank">https://github.com/TalkingSites/canberra-pop-up-tech-hub</a></p>
+
+    <h3>Editing Content via GitHub</h3>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">Edit the file directly on Github or clone the repository to your local machine.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">Make your edits in the relevant files.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">Commit your changes with a meaningful message.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">Push your changes and create a pull request.</div>
+    </div>
+
+    <div class="note">
+      ✅ Once your pull request is merged, the changes will appear live.
+    </div>
+
+    <h3>Adding to Gallery</h3>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">Upload your images to <code>/src/assets/uploads</code> in the repository.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">Name your files starting with <code>gallery</code>.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">Examples: <code>gallery-team-photo.jpg</code>, <code>gallery-event-2024.png</code></div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">Commit and push your changes to GitHub.</div>
+    </div>
+
+    <div class="note">
+      ✅ Images with filenames starting with "gallery" will appear in the gallery section once the Content Manager is back online!
     </div>
   </div>
-
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <script>
-<<<<<<< Updated upstream
-    // Wait for CMS to load
-=======
->>>>>>> Stashed changes
-    CMS.registerPreviewStyle(`
-        .custom-banner {
-          display: none !important;
-        }
-      `);
-  </script>
 </body>
 
 </html>

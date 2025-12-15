@@ -6,7 +6,7 @@ eventDate: 2025-12-21T14:00:00+11:00
 startTime: 2:00PM
 endTime: 4:00PM
 location: Canberra Tech Hub next to CMAG
-# image: /assets/uploads/create-website-workshop.png
+image: /assets/uploads/offline-ai-v101.webp
 ---
 
 Most people assume they need cloud APIs or powerful servers to run large language models. The good news: you can run a capable agent entirely offline, on your own Linux laptop, using open-source tools.
