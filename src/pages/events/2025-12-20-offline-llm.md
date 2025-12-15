@@ -2,7 +2,7 @@
 title: "Workshop: Running Agentic AI Offline on your Linux Machine"
 description: "Most people assume they need cloud APIs or powerful servers to run large language models. The good news: you can run a capable agent entirely offline, on your own Linux laptop, using open-source tools."
 permalink: /events/2025/12/offline-llm/
-eventDate: 2025-12-21T14:00:00+11:00
+eventDate: 2025-12-20T14:00:00+11:00
 startTime: 2:00PM
 endTime: 4:00PM
 location: Canberra Tech Hub next to CMAG
