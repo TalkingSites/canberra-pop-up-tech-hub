@@ -5,10 +5,9 @@ permalink: /events/2025/12/offline-llm/
 eventDate: 2025-12-20T14:00:00+11:00
 startTime: 2:00PM
 endTime: 4:00PM
-location: Skill Studio, Civic Center, Canberra
+location: "Skill Studio, Civic Center, Canberra "
 image: /assets/uploads/offline-ai-v102.webp
 ---
-
 Most people assume they need cloud APIs or powerful servers to run large language models. The good news: you can run a capable agent entirely offline, on your own Linux laptop, using open-source tools.
 
 In this hands-on tutorial, we’ll begin by installing a small but powerful open-source model (such as Mistral or Llama) using Ollama. Once your local LLM is up and running, we’ll wrap it with JanAI to give it agentic capabilities. Finally, we’ll extend the agent with MCP tools so it can interact with your Linux environment.   
@@ -21,8 +20,10 @@ By the end of the session, you will:
 
 This session is beginner-friendly, no prior AI experience is required, only comfort with using the Linux terminal. Attendees will follow along on their own laptops. Come learn how to take control of AI on your own hardware, with open tools, and no cloud dependency.
 
+This paid workshop is part of the [Canberra Un-forum](https://electronworkshop.org/posts/canberra-unforum)
 
-Map:   
-<https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8>
+Purchase your [tickets](https://luma.com/9ducj3ua) in advance
 
-This workshop is part of the [Canberra Un-forum](https://electronworkshop.org/posts/canberra-unforum)
+Map: <https://maps.app.goo.gl/9dYW3Baa28Q1ZnFP8>
+
+Join Online (Free): <https://electronworkshop.com.au/goto/venue>
