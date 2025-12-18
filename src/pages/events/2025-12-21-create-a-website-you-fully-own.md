@@ -6,8 +6,8 @@ permalink: /events/2025/12/create-your-website/
 eventDate: 2025-12-21T11:00:00+11:00
 startTime: 11:00AM
 endTime: 1:00PM
-location: Canberra Tech Hub next to CMAG
-image: /assets/uploads/create-website-workshop-v101.webp
+location: Skill Studio, Civic Center, Canberra
+image: /assets/uploads/create-website-workshop-v102.webp
 ---
 
 {{description}}   
