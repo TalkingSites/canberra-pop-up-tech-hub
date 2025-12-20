@@ -2,9 +2,9 @@
 title: "Workshop: Create a Website You Fully Own"
 description: In this workshop, you will learn how to create your own website from scratch and leave with a live, fully functional site.
 permalink: /events/2025/12/create-your-website/
-eventDate: 2025-12-21T11:00:00+11:00
-startTime: 11:00AM
-endTime: 1:00PM
+eventDate: 2025-12-21T11:00:00+14:00
+startTime: 2:00PM
+endTime: 4:00PM
 location: Skill Studio, Civic Center, Canberra
 image: /assets/uploads/create-website-workshop-v102.webp
 ---

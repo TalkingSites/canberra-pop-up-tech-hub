@@ -3,5 +3,7 @@
   "description": "Located in the heart of Canberra City, Canberra Popup Tech Hub is operating for 11 Weeks, until the end of December, to bring people together to explore blockchain, artificial intelligence, and emerging technologies through hands-on learning, collaboration, and open access to new tools. It is an open fee-free co-working space as well as a venue for events. Pop in to check us out, stay to co-work or host your event here!",
   "logo": "/assets/images/cbret3-plain.svg",
   "favicon": "/assets/images/favicon.svg",
-  "baseUrl": "/"
+  "baseUrl": "/",
+  "timezone": "Australia/Sydney",
+  "dateFormat": "dddd, Do MMMM YYYY"
 }
